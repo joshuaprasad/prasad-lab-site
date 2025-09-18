@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prasad Lab</title>
+  <style>
+    :root {
+      --csu-green: #1E4D2B;
+      --csu-gold: #C8C372;
+      --aggie-orange: #D9782D;
+      --csu-black: #59595B;
+      --csu-white: #FFFFFF;
+    }
+    body {
+      margin: 0;
+      font-family: Arial, Minion, sans-serif;
+      line-height: 1.6;
+      color: var(--csu-black);
+      scroll-behavior: smooth;
+      background: #fafafa;
+    }
+    header {
+      background-image: url('images/lab-hero.jpg'); /* Placeholder hero image */
+      background-size: cover;
+      background-position: center;
+      color: var(--csu-white);
+      text-align: center;
+      padding: 6rem 1rem;
+      position: relative;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(30,77,43,0.7);
+    }
+    header h1, header p {
+      position: relative;
+      z-index: 1;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 3rem;
+    }
+    header p {
+      font-size: 1.3rem;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background: var(--csu-white);
+      border-bottom: 2px solid var(--csu-green);
+      z-index: 1000;
+    }
+    nav ul {
+      margin: 0;
+      padding: 0.75rem;
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--csu-green);
+      font-weight: bold;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+    nav a:hover {
+      color: var(--aggie-orange);
+      transform: translateY(-2px);
+    }
+
+    section {
+      padding: 3rem 1rem;
+      max-width: 1000px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    h2 {
+      color: var(--csu-green);
+      margin-bottom: 1rem;
+      border-bottom: 3px solid var(--csu-gold);
+      display: inline-block;
+      padding-bottom: 0.25rem;
+    }
+    .callout {
+      background: var(--csu-gold);
+      padding: 1rem;
+      border-left: 6px solid var(--aggie-orange);
+      border-radius: 6px;
+      margin: 1.5rem 0;
+      font-weight: bold;
+    }
+
+    .members, .alumni {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .member-card {
+      padding: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #fff;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    .member-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .member-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+    .member-card img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 50%;
+      background: #ccc; /* Placeholder color */
+    }
+    .member-card h3 {
+      margin: 0;
+      color: var(--aggie-orange);
+    }
+    .member-info {
+      flex: 1;
+    }
+
+    footer {
+      background: var(--csu-green);
+      color: var(--csu-white);
+      text-align: center;
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+    a {
+      color: var(--aggie-orange);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>The Prasad Lab</h1>
+    <p>Researching fairness, authenticity, and the future of work</p>
+    <p>Industrial-Organizational Psychology | Colorado State University</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#people">People</a></li>
+      <li><a href="#consulting">Consulting</a></li>
+      <li><a href="#resources">Resources</a></li>
+      <li><a href="#join">Join</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section id="about">
+    <h2>About the Lab</h2>
+    <p>The Prasad Lab focuses on neurodiversity, authenticity at work, and fairness in assessment, with special emphasis on the role of machine learning in talent management. We also contribute to the NSF-funded Rocky Mountain Alliance for Minority Participation in STEM.</p>
+    <div class="callout">
+      🌟 Recent highlights: NSF funding, student awards, conference presentations, and doctoral candidacy achievements.
+    </div>
+  </section>
+
+  <section id="research">
+    <h2>Research & Publications</h2>
+    <p>Our research addresses workplace equity, AI/ML in personnel decisions, and authentic employee experiences.</p>
+    <p><a href="https://scholar.google.com/citations?hl=en&user=JVRH_s0AAAAJ" target="_blank">View our publications on Google Scholar</a></p>
+  </section>
+
+  <section id="people">
+    <h2>People</h2>
+    <h3>Current Members</h3>
+    <div class="members">
+      <div class="member-card">
+        <img src="images/josh.jpg" alt="Josh Prasad">
+        <div class="member-info">
+          <h3>Josh Prasad, Ph.D. (he/him)</h3>
+          <p>Assistant Professor in the Department of Psychology at CSU. Research interests include assessment fairness, authenticity at work, machine learning in personnel decisions, and promoting STEM careers among historically underrepresented populations.</p>
+          <p><a href="https://www.linkedin.com" target="_blank">LinkedIn</a></p>
+        </div>
+      </div>
+      <div class="member-card">
+        <img src="images/hannah.jpg" alt="Hannah Finch">
+        <div class="member-info">
+          <h3>Hannah Finch, M.S. (she/her)</h3>
+          <p>Fifth-year Ph.D. student in I/O Psychology. Research on workplace diversity and occupational stressors. Awarded the CNS Graduate Student Excellence in Undergraduate Teaching & Mentoring Award. Passionate about teaching and mentoring.</p>
+          <p><a href="https://www.linkedin.com" target="_blank">LinkedIn</a></p>
+        </div>
+      </div>
+      <div class="member-card">
+        <img src="images/kesea.jpg" alt="Kesea Nutter">
+        <div class="member-info">
+          <h3>Kesea Nutter, M.S. (she/her)</h3>
+          <p>First-year Ph.D. student in I/O Psychology. Research interests include DEI in talent management, reducing bias in machine learning, and advanced statistical techniques.</p>
+          <p><a href="https://www.linkedin.com" target="_blank">LinkedIn</a></p>
+        </div>
+      </div>
+    </div>
+
+    <h3>Alumni</h3>
+    <div class="alumni">
+      <div class="member-card">
+        <img src="images/annika.jpg" alt="Annika Benson">
+        <div class="member-info">
+          <h3><a href="https://www.linkedin.com/in/annikabenson/" target="_blank">Annika Benson, M.S.</a></h3>
+          <p>Research on workplace equity and the talent management lifecycle using machine learning. Co-director of MUGSS, with internships at Blue Beyond Consulting and Merck.</p>
+        </div>
+      </div>
+      <div class="member-card">
+        <img src="images/brittany.jpg" alt="Brittany Lynner">
+        <div class="member-info">
+          <h3><a href="https://www.linkedin.com/in/brittanylynner/" target="_blank">Brittany Lynner, MA, MS</a></h3>
+          <p>Research on organizational wellness, burnout, gig work, workplace recovery, and equity. Contractor for EXMI and DDE, with professional experience in student affairs.</p>
+        </div>
+      </div>
+      <div class="member-card">
+        <img src="images/kelsie.jpg" alt="Kelsie Colley">
+        <div class="member-info">
+          <h3><a href="https://www.linkedin.com/in/kelsiecolley/" target="_blank">Kelsie Colley</a></h3>
+          <p>People Research Consultant at Zoom and global lead of Neurodiversity at Zoom Affinity Group. Research on employee flourishing, DEI, and people analytics. Strong advocate for inclusive organizational practices.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="consulting">
+    <h2>Consulting & Applied Work</h2>
+    <p>We bring research into practice through applied projects and consulting, helping organizations integrate fairness and evidence-based practices. Learn more at <a href="https://p-17-a.com" target="_blank">Prasad & Associates</a>.</p>
+  </section>
+
+  <section id="resources">
+    <h2>Resources</h2>
+    <ul>
+      <li><a href="https://www.siop.org" target="_blank">Society for Industrial and Organizational Psychology (SIOP)</a></li>
+      <li><a href="https://psychology.colostate.edu/" target="_blank">CSU Psychology Department</a></li>
+      <li><a href="https://psychology.colostate.edu/io/" target="_blank">CSU I/O Psychology Program</a></li>
+    </ul>
+  </section>
+
+  <section id="join">
+    <h2>Join Us</h2>
+    <p>Interested in graduate research opportunities? Contact Dr. Josh Prasad to learn about openings for students passionate about workplace fairness, authenticity, and the future of work.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:joshua.prasad@colostate.edu">joshua.prasad@colostate.edu</a></p>
+    <p><a href="https://orcid.org" target="_blank">ORCID</a> | <a href="https://scholar.google.com/citations?hl=en&user=JVRH_s0AAAAJ" target="_blank">Google Scholar</a> | <a href="https://www.linkedin.com" target="_blank">LinkedIn</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 The Prasad Lab</p>
+  </footer>
+
+  <script>
+    // Scroll-triggered animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('section, .member-card').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
